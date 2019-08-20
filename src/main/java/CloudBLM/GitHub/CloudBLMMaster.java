@@ -41,12 +41,12 @@ public class CloudBLMMaster extends  WarningMessage {
 	@BeforeTest
 	public void Report() throws Exception
 	{
-		report = new ExtentReports("C:\\Users\\fazil\\Desktop\\Test Report\\Cloud BLM GitHub Test Report.html");
+		report = new ExtentReports("D:\\Report\\Cloud BLM GitHub Test Report.html");
 		test = report.startTest("CloudBLM Report");	
 		
 		DateFormat dateFormat = new SimpleDateFormat("dd-MM-yy HH-mm-ss");
 		Date date = new Date();
-		Recorder = new ATUTestRecorder("D:\\Selenium files\\CloudBLM\\Output\\", "Cloud BLM GitHub-" + dateFormat.format(date), false);
+		Recorder = new ATUTestRecorder("D:\\Report\\", "Cloud BLM GitHub-" + dateFormat.format(date), false);
 	
 		File file  = new File("fileName.fileExtension"); // creating object of File 
 		String str = file.getPath().replace(".fileExtension", ".mp4"); // replacing extension to another 
@@ -116,7 +116,7 @@ public class CloudBLMMaster extends  WarningMessage {
 		}
 	}
 	
-	@Test(priority=2)
+	/*@Test(priority=2)
 	public void CreateProject() throws Exception
 	{			
 	   try {
@@ -486,7 +486,7 @@ public class CloudBLMMaster extends  WarningMessage {
 		}
 		System.out.println(e);
 	}
-	}
+	}*/
 	
 	@AfterTest
 	public void Exit() throws Exception

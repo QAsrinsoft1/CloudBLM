@@ -3,14 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="CloudBLM.GitHub.LoginPage">
+      <class name="CloudBLM.GitHub.CloudBLMMaster">
         <methods>
-          <include name="LoginScenarios_3"/>
-          <include name="LoginScenarios_2"/>
-          <include name="LoginScenarios_1"/>
-          <include name="LoginScenarios_4"/>
+          <include name="Login"/>
+          <include name="Report"/>
+          <include name="Exit"/>
         </methods>
-      </class> <!-- CloudBLM.GitHub.LoginPage -->
+      </class> <!-- CloudBLM.GitHub.CloudBLMMaster -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

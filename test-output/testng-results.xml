@@ -2,28 +2,28 @@
 <testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite [Default suite]" duration-ms="45400" started-at="2019-08-19T11:47:04Z" finished-at="2019-08-19T11:47:50Z">
+  <suite name="Default suite" duration-ms="43014" started-at="2019-08-20T07:54:19Z" finished-at="2019-08-20T07:55:02Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="45400" started-at="2019-08-19T11:47:04Z" finished-at="2019-08-19T11:47:50Z">
+    <test name="Default test" duration-ms="43014" started-at="2019-08-20T07:54:19Z" finished-at="2019-08-20T07:55:02Z">
       <class name="CloudBLM.GitHub.CloudBLMMaster">
-        <test-method status="PASS" signature="Report()[pri:0, instance:CloudBLM.GitHub.CloudBLMMaster@371a67ec]" name="Report" is-config="true" duration-ms="441" started-at="2019-08-19T11:47:04Z" finished-at="2019-08-19T11:47:05Z">
+        <test-method status="PASS" signature="Report()[pri:0, instance:CloudBLM.GitHub.CloudBLMMaster@1060b431]" name="Report" is-config="true" duration-ms="603" started-at="2019-08-20T07:54:19Z" finished-at="2019-08-20T07:54:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Report -->
-        <test-method status="PASS" signature="WebBrowser()[pri:0, instance:CloudBLM.GitHub.CloudBLMMaster@371a67ec]" name="WebBrowser" duration-ms="17287" started-at="2019-08-19T11:47:05Z" finished-at="2019-08-19T11:47:22Z">
+        <test-method status="PASS" signature="WebBrowser()[pri:0, instance:CloudBLM.GitHub.CloudBLMMaster@1060b431]" name="WebBrowser" duration-ms="13770" started-at="2019-08-20T07:54:19Z" finished-at="2019-08-20T07:54:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- WebBrowser -->
-        <test-method status="PASS" signature="Login()[pri:1, instance:CloudBLM.GitHub.CloudBLMMaster@371a67ec]" name="Login" duration-ms="25402" started-at="2019-08-19T11:47:22Z" finished-at="2019-08-19T11:47:47Z">
+        <test-method status="PASS" signature="Login()[pri:1, instance:CloudBLM.GitHub.CloudBLMMaster@1060b431]" name="Login" duration-ms="25783" started-at="2019-08-20T07:54:33Z" finished-at="2019-08-20T07:54:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method status="PASS" signature="Exit()[pri:0, instance:CloudBLM.GitHub.CloudBLMMaster@371a67ec]" name="Exit" is-config="true" duration-ms="2248" started-at="2019-08-19T11:47:47Z" finished-at="2019-08-19T11:47:50Z">
+        <test-method status="PASS" signature="Exit()[pri:0, instance:CloudBLM.GitHub.CloudBLMMaster@1060b431]" name="Exit" is-config="true" duration-ms="2805" started-at="2019-08-20T07:54:59Z" finished-at="2019-08-20T07:55:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Exit -->
       </class> <!-- CloudBLM.GitHub.CloudBLMMaster -->
     </test> <!-- Default test -->
-  </suite> <!-- Default suite [Default suite] -->
+  </suite> <!-- Default suite -->
 </testng-results>
