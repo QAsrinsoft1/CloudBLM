@@ -29,7 +29,7 @@ public class CreateProject {
 	driver.findElement(By.xpath("//a[text()=' Create ']")).click();
 	Thread.sleep(2000);
 	
-	// ittt tsacasche project name field but not entered the value
+	//BR003 ittt tsacasche project name field but not entered the value
 			driver.findElement(By.xpath("//*[@id='projectName']")).click();
 			Thread.sleep(4000);
 			driver.findElement(By.xpath("(//*[@class='form-group'])[1]")).click();
