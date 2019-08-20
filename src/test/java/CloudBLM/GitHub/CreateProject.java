@@ -29,25 +29,15 @@ public class CreateProject {
 	driver.findElement(By.xpath("//a[text()=' Create ']")).click();
 	Thread.sleep(2000);
 	
-	src = new File("D:\\Datasheet\\CloudBLM Model.xls");
-	fis = new FileInputStream(src);
-	wb = new HSSFWorkbook(fis);
-	sh1 = wb.getSheetAt(0);
-	System.out.println(sh1.getRow(1).getCell(0).getStringCellValue());
-	String Name = sh1.getRow(1).getCell(0).getStringCellValue();
-	Thread.sleep(2000);
-	
 	// touch the project name field but not entered the value
 			driver.findElement(By.xpath("//*[@id='projectName']")).click();
 			Thread.sleep(4000);
-			System.out.println("pass");
 			driver.findElement(By.xpath("(//*[@class='form-group'])[1]")).click();
 			Thread.sleep(2000);
 			// Validate the validation message
 			String validationmessage = "Project Name is required";
 			String text = driver.findElement(By.xpath("//*[text() ='Project Name is required']")).getText();
-			System.out.println(text);
-			if (validationmessage.contains(text)) {
+			if (validationmessage.equals(text)){
 				System.out.println("validation message are same");
 			} else {
 				System.out.println("validation message are different");
