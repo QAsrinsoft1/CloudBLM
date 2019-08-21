@@ -24,7 +24,7 @@ package CloudBLM.GitHub;
 		public static HSSFSheet sh1;
 		public static HSSFWorkbook wb;
 		
-		public static void ProjectValidation() throws InterruptedException, AWTException, IOException {
+		public static void SmokeTest() throws InterruptedException, AWTException, IOException {
 			
 			System.setProperty("webdriver.chrome.driver",
 					"D:\\Selenium files\\Workspace\\SeleniumTraining\\Driver2\\chromedriver.exe");
