@@ -18,17 +18,11 @@ package CloudBLM.GitHub;
 
 	public class OverallScenarios {
 		
-		public static WebDriver driver = WebBrowser.driver;
-		public static File src;
-		public static FileInputStream fis;
-		public static HSSFSheet sh1;
-		public static HSSFWorkbook wb;
 		
-		public static void SmokeTest() throws InterruptedException, AWTException, IOException {
+		public static void main(String[] args) throws InterruptedException, AWTException, IOException {
 			
-			System.setProperty("webdriver.chrome.driver",
-					"D:\\Selenium files\\Workspace\\SeleniumTraining\\Driver2\\chromedriver.exe");
-			driver = new ChromeDriver();
+			System.setProperty("webdriver.chrome.driver", "D:\\Selenium files\\Jars\\chromedriver.exe");
+			WebDriver driver = new ChromeDriver();
 			
 			// Login the application URL
 			
@@ -37,7 +31,10 @@ package CloudBLM.GitHub;
 			driver.findElement(By.xpath("//*[@id='login-email']")).sendKeys("qc@sst.com");
 			driver.findElement(By.id("login-password")).sendKeys("sst12345");
 			driver.findElement(By.xpath("//*[text() ='Sign In']")).click();
-			Thread.sleep(2000);
+			Thread.sleep(2000);			
+			
+			// Create the project name
+			
 			driver.findElement(By.xpath("//*[text() =' Create ']")).click();
 			System.out.println("pass");
 
@@ -77,7 +74,7 @@ package CloudBLM.GitHub;
 
 			// Enter the Valid userName
 			
-			driver.findElement(By.xpath("//*[@id='projectName']")).sendKeys("Sasasasasa");
+			driver.findElement(By.xpath("//*[@id='projectName']")).sendKeys("Automation Project");
 			Thread.sleep(2000);
 
 			// click the project type field and Select the respective project sub type
@@ -195,12 +192,12 @@ package CloudBLM.GitHub;
 
 			// Validate the End date and enter the Value
 			
-			driver.findElement(By.xpath("(//*[@class ='e-input e-lib e-keyboard'])[2]")).sendKeys("08-08-2029");
+			driver.findElement(By.xpath("(//*[@class ='e-input e-lib e-keyboard'])[2]")).sendKeys("08-08-2020");
 			Thread.sleep(2000);
 
 			// Enter the valid data in project Address field
 			
-			driver.findElement(By.xpath("//*[@formcontrolname ='ProjectAddress']")).sendKeys("dsdsdsdsdsds");
+			driver.findElement(By.xpath("//*[@formcontrolname ='ProjectAddress']")).sendKeys("Bear Hill St., North Ring Road, CA-028 001");
 			Thread.sleep(2000);
 
 			// Validate the description field but not enter the value
@@ -220,7 +217,7 @@ package CloudBLM.GitHub;
 
 			// Validate the description field and the enter the value
 			
-			driver.findElement(By.id("Description")).sendKeys("cgJHSAahgvfhgdzvcGXZSVcfdhgfdjhsaf");
+			driver.findElement(By.id("Description")).sendKeys("Test Description to the Project");
 			Thread.sleep(2000);		
 
 			// clear the project
