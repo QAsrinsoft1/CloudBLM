@@ -37,5 +37,7 @@
 	<classpathentry kind="lib" path="D:/Selenium files/Jars/selenium-server-standalone-3.0.1.jar"/>
 	<classpathentry kind="lib" path="D:/Selenium files/Jars/ATUTestRecorder_2.1.jar"/>
 	<classpathentry kind="lib" path="D:/Selenium files/Jars/javax.activation-1.1.0.v201105071233.jar"/>
+	<classpathentry kind="lib" path="D:/Jar Files/sikulixapi.jar"/>
+	<classpathentry kind="lib" path="D:/Jar Files/sikulixsetup-1.1.1.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
