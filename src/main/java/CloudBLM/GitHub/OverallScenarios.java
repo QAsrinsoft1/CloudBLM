@@ -80,7 +80,7 @@ public class OverallScenarios {
 		Projectname.clear();
 		Thread.sleep(4000);
 
-		// Enter the Valid userName
+		// Enter the Valid userName and validate 
 
 		driver.findElement(By.xpath("//*[@id='projectName']")).sendKeys("Automation Project");
 		Thread.sleep(2000);
