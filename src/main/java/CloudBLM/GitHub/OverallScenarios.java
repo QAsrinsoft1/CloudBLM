@@ -31,6 +31,45 @@ public class OverallScenarios {
 
 		driver.get("http://192.168.2.14/blm/projects");
 		driver.manage().window().maximize();
+		
+		// invalid UserName and valid Password
+				WebElement element = driver.findElement(By.xpath("//*[@id='login-email']"));
+				element.sendKeys("qcdsdsd@sst");
+				Thread.sleep(2000);
+				WebElement element1 = driver.findElement(By.id("login-password"));
+				element1.sendKeys("sst12345");
+				Thread.sleep(2000);
+				driver.findElement(By.xpath("//*[text() ='Sign In']")).click();
+				Thread.sleep(2000);
+				element.clear();
+				element1.clear();
+		Thread.sleep(3000);
+
+				// valid UserName and invalid Password ss
+				WebElement element2 = driver.findElement(By.xpath("//*[@id='login-email']"));
+				element2.sendKeys("qc@sst.com");
+				Thread.sleep(2000);
+				WebElement element3 = driver.findElement(By.id("login-password"));
+				element3.sendKeys("sstfdfsfdsfds12345");
+				Thread.sleep(2000);
+				driver.findElement(By.xpath("//*[text() ='Sign In']")).click();
+				Thread.sleep(2000);
+				element2.clear();
+				element3.clear();
+				Thread.sleep(2000);
+
+				// invalid UserName and invalid Password
+				WebElement element4 = driver.findElement(By.xpath("//*[@id='login-email']"));
+				element4.sendKeys("dfdqc@sst.com");
+				Thread.sleep(2000);
+				WebElement element5 = driver.findElement(By.id("login-password"));
+				element5.sendKeys("sst1dfd2345");
+				Thread.sleep(2000);
+				driver.findElement(By.xpath("//*[text() ='Sign In']")).click();
+				Thread.sleep(2000);
+				element4.clear();
+				element5.clear();
+				Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[@id='login-email']")).sendKeys("qc@sst.com");
 		driver.findElement(By.id("login-password")).sendKeys("sst12345");
 		driver.findElement(By.xpath("//*[text() ='Sign In']")).click();
