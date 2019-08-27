@@ -32,7 +32,7 @@ public class OverallScenarios {
 		driver.get("http://192.168.2.14/blm/projects");
 		driver.manage().window().maximize();
 		
-		// invalid UserName and valid Password
+		// invalid UserName and valid password
 				WebElement element = driver.findElement(By.xpath("//*[@id='login-email']"));
 				element.sendKeys("qcdsdsd@sst");
 				Thread.sleep(2000);
