@@ -23,21 +23,16 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
-	<classpathentry kind="lib" path="D:/Selenium files/Jars/javax.mail-api-1.6.2.jar"/>
-	<classpathentry kind="lib" path="D:/Selenium files/Jars/java-ocr-api-15.3.0.3.jar"/>
-	<classpathentry kind="lib" path="D:/Selenium files/Jars/testng-6.14.3.jar"/>
-	<classpathentry kind="lib" path="D:/Selenium files/Jars/extentreports-2.41.2.jar"/>
-	<classpathentry kind="lib" path="D:/Selenium files/Jars/selenium-server-standalone-3.5.3.jar"/>
-	<classpathentry kind="lib" path="D:/Selenium files/Jars/freemarker-2.3.23.jar"/>
-	<classpathentry kind="lib" path="D:/Selenium files/Jars/json-simple-1.1.1.jar"/>
-	<classpathentry kind="lib" path="D:/Selenium files/Jars/sikulixapi.jar"/>
-	<classpathentry kind="lib" path="D:/Selenium files/Jars/sikulixsetup-1.1.1.jar"/>
-	<classpathentry kind="lib" path="D:/Selenium files/Jars/tess4j-3.4.8.jar"/>
-	<classpathentry kind="lib" path="D:/Selenium files/Jars/log4j-1.2.17.jar"/>
-	<classpathentry kind="lib" path="D:/Selenium files/Jars/selenium-server-standalone-3.0.1.jar"/>
-	<classpathentry kind="lib" path="D:/Selenium files/Jars/ATUTestRecorder_2.1.jar"/>
-	<classpathentry kind="lib" path="D:/Selenium files/Jars/javax.activation-1.1.0.v201105071233.jar"/>
-	<classpathentry kind="lib" path="D:/Jar Files/sikulixapi.jar"/>
-	<classpathentry kind="lib" path="D:/Jar Files/sikulixsetup-1.1.1.jar"/>
+	<classpathentry kind="lib" path="Jar Files/ATUTestRecorder_2.1.jar"/>
+	<classpathentry kind="lib" path="Jar Files/extentreports-2.41.2.jar"/>
+	<classpathentry kind="lib" path="Jar Files/freemarker-2.3.23.jar"/>
+	<classpathentry kind="lib" path="Jar Files/javax.activation-1.1.0.v201105071233.jar"/>
+	<classpathentry kind="lib" path="Jar Files/javax.mail-api-1.6.2.jar"/>
+	<classpathentry kind="lib" path="Jar Files/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="Jar Files/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="Jar Files/selenium-server-standalone-3.5.3.jar"/>
+	<classpathentry kind="lib" path="Jar Files/sikulixapi.jar"/>
+	<classpathentry kind="lib" path="Jar Files/sikulixsetup-1.1.1.jar"/>
+	<classpathentry kind="lib" path="Jar Files/tess4j-3.4.8.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

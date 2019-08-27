@@ -23,12 +23,13 @@ public class OverallScenarios {
 
 	public static void main(String[] args) throws InterruptedException, AWTException, IOException {
 
-		System.setProperty("webdriver.chrome.driver", "D:\\Selenium files\\Jars\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver",
+				"Z:\\git\\CloudBLM2\\Jar Files\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 
 		// Login the application URL
 
-		driver.get("http://192.168.1.154/blm/");
+		driver.get("http://192.168.2.14/blm/projects");
 		driver.manage().window().maximize();
 		driver.findElement(By.xpath("//*[@id='login-email']")).sendKeys("qc@sst.com");
 		driver.findElement(By.id("login-password")).sendKeys("sst12345");
@@ -41,11 +42,16 @@ public class OverallScenarios {
 		System.out.println("pass");
 
 		// Without entered the project name
-
 		driver.findElement(By.xpath("//*[@id='projectName']")).click();
-		Thread.sleep(4000);
-		driver.findElement(By.xpath("(//*[@class='form-group'])[1]")).click();
 		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@formcontrolname='ProjectTypeID']")).click();
+		Thread.sleep(2000);
+		/*
+		 * driver.findElement(By.xpath("//*[@id='projectName']")).click();
+		 * Thread.sleep(4000);
+		 * driver.findElement(By.xpath("(//*[@class='form-group'])[1]")).click();
+		 * Thread.sleep(2000);
+		 */
 
 		// Validate the validation message
 
@@ -61,8 +67,8 @@ public class OverallScenarios {
 		// Enter the inValid userName and validate the validation message
 
 		WebElement Projectname = driver.findElement(By.xpath("//*[@id='projectName']"));
-		Projectname.sendKeys("Sasasa232323%$#^%$^%@$^sasa");
-		driver.findElement(By.xpath("(//*[@class='form-group'])[1]")).click();
+		Projectname.sendKeys("fdsjhfvjhdsvjvgjdhjgfdshfgvjhfdgvjd");
+		driver.findElement(By.xpath("//*[@formcontrolname='ProjectTypeID']")).click();
 		String Invalidname = "Project Name allowed 16 characters only";
 		String projectnamevalidationmessage = driver
 				.findElement(By.xpath("//*[text() = 'Project Name allowed 16 characters only.']")).getText();
@@ -81,7 +87,7 @@ public class OverallScenarios {
 
 		// click the project type field and Select the respective project sub type
 
-		driver.findElement(By.xpath("(//*[@class='form-group'])[1]")).click();
+		driver.findElement(By.xpath("//*[@formcontrolname='ProjectTypeID']")).click();
 		Thread.sleep(2000);
 		WebElement projectid = driver.findElement(By.xpath("//*[@formcontrolname='ProjectTypeID']"));
 		Select sl = new Select(projectid);
@@ -94,7 +100,7 @@ public class OverallScenarios {
 
 		// click the project sub type field and Select the respective project sub type
 
-		driver.findElement(By.xpath("(//*[@class ='form-group'])[2]")).click();
+		driver.findElement(By.xpath("//*[@formcontrolname ='ProjectSubTypeID']")).click();
 		WebElement projectsubtype = driver.findElement(By.xpath("//*[@formcontrolname='ProjectSubTypeID']"));
 		Select sel = new Select(projectsubtype);
 		sel.selectByIndex(0);
@@ -106,19 +112,18 @@ public class OverallScenarios {
 
 		// Validate the Life cycle template and select the value
 
-		driver.findElement(By.xpath("(//*[@class ='form-group'])[3]")).click();
-		WebElement element4 = driver.findElement(By.xpath("//*[@formcontrolname='LifecycleTemplate']"));
-		Select sel2 = new Select(element4);
-		sel2.selectByIndex(1);
-		String text5 = element4.getText();
+		driver.findElement(By.xpath("//*[@formcontrolname='LifecycleTemplate']")).click();
+		WebElement lifecycletemplate = driver.findElement(By.xpath("//*[@formcontrolname='LifecycleTemplate']"));
+		Select sel1 = new Select(lifecycletemplate);
+		sel1.selectByIndex(1);
+		Thread.sleep(5000);
+		String text4 = lifecycletemplate.getText();
 		{
-			System.out.println(text5);
+			System.out.println(text4);
 		}
-		Thread.sleep(2000);
 
 		// Validate the Construction type and select the value
-
-		driver.findElement(By.xpath("(//*[@class ='form-group'])[4]")).click();
+		driver.findElement(By.xpath("//*[@formcontrolname='ConstructionTypeID']")).click();
 		WebElement Construction = driver.findElement(By.xpath("//*[@formcontrolname='ConstructionTypeID']"));
 		Select sel4 = new Select(Construction);
 		sel4.selectByIndex(1);
@@ -130,7 +135,7 @@ public class OverallScenarios {
 
 		// Validate the contract type and select the value
 
-		driver.findElement(By.xpath("(//*[@class ='form-group'])[5]")).click();
+		driver.findElement(By.xpath("//*[@formcontrolname='ContractTypeID']")).click();
 		WebElement contract = driver.findElement(By.xpath("//*[@formcontrolname='ContractTypeID']"));
 
 		Select sel5 = new Select(contract);
@@ -270,11 +275,11 @@ public class OverallScenarios {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[@class = 'filter-enable pointer']")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("(//*[@type = 'text'])[2]")).sendKeys("QC");
+		driver.findElement(By.xpath("(//*[@type = 'text'])[2]")).sendKeys("AUTOMATIONTEST");
 		Thread.sleep(2000);
 		Thread.sleep(2000);
-		String test = "QC PROJECT";
-		WebElement sidebar = driver.findElement(By.xpath("//*[text() ='QC PROJECT']"));
+		String test = "AUTOMATIONTEST";
+		WebElement sidebar = driver.findElement(By.xpath("//*[text() ='AUTOMATIONTEST']"));
 		String projectname = sidebar.getText();
 		if (test.equals(projectname)) {
 			System.out.println("Both names are matched");
@@ -287,7 +292,7 @@ public class OverallScenarios {
 		driver.findElement(By.xpath("//*[@class = 'fa fa-bars']")).click();
 		// check the project name is displayed or not in cardview
 		Thread.sleep(5000);
-		WebElement Projectdisplayeadcard = driver.findElement(By.xpath("//*[text()='QC PROJECT']"));
+		WebElement Projectdisplayeadcard = driver.findElement(By.xpath("//*[text()='AUTOMATIONTEST']"));
 		String projectname2 = "SffffSS";
 		if (Projectdisplayeadcard.isDisplayed()) {
 			String projectname3 = Projectdisplayeadcard.getText();
@@ -303,7 +308,7 @@ public class OverallScenarios {
 		// check the project type is displayed or not in card view
 		Thread.sleep(5000);
 		WebElement projecttypecard = driver.findElement(By.xpath("//*[text()='Healthcare']"));
-		String projecttypename = "Commercial";
+		String projecttypename = "Healthcare";
 		String projecttypenametext = projecttypecard.getText();
 		System.out.println(projecttypenametext);
 		if (projecttypecard.isDisplayed()) {
@@ -321,7 +326,7 @@ public class OverallScenarios {
 		// check the project type is displayed or not
 		Thread.sleep(5000);
 		WebElement projectsubtypecard = driver.findElement(By.xpath("//*[text()='Hospital']"));
-		String projectsubtypename = "Hotel";
+		String projectsubtypename = "Hospital";
 		String projectsubtypetext = projectsubtypecard.getText();
 		System.out.println(projectsubtypetext);
 		if (projectsubtypecard.isDisplayed()) {
@@ -355,12 +360,14 @@ public class OverallScenarios {
 
 		// click the rules icon in card view
 
-		Thread.sleep(5000);
+		Thread.sleep(3000);
+		System.out.println("elment is not cliclkable");
 		driver.findElement(By.xpath("//*[@id='icon_1']")).click();
 		Thread.sleep(3000);
 		driver.navigate().back();
 		// click the issues icon
 		Thread.sleep(5000);
+		System.out.println("passed issues");
 		driver.findElement(By.xpath("(//*[@class='icon-issue'])[1]")).click();
 		Thread.sleep(1000);
 		driver.navigate().back();
@@ -370,6 +377,7 @@ public class OverallScenarios {
 		driver.findElement(By.xpath("//*[@id='icon_4']")).click();
 		Thread.sleep(1000);
 		driver.navigate().back();
+		System.out.println("passed subfolder");
 		Thread.sleep(2000);
 		// click the viewer
 
@@ -384,8 +392,8 @@ public class OverallScenarios {
 		// Check the project name is displayed or not
 
 		Thread.sleep(4000);
-		String Projectnamegridtxt = "Qc Project";
-		WebElement Projectnamegrid = driver.findElement(By.xpath("//*[text()='Qc Project']"));
+		String Projectnamegridtxt = "Automationtest";
+		WebElement Projectnamegrid = driver.findElement(By.xpath("//*[text()='Automationtest']"));
 		if (Projectnamegrid.isDisplayed()) {
 			Assert.assertEquals(Projectnamegridtxt, Projectnamegrid.getText());
 			System.out.println("Project Name is displayed");
@@ -428,8 +436,8 @@ public class OverallScenarios {
 		}
 		// Check the Start date is displayed or not
 		Thread.sleep(5000);
-		String sdate = "08/03/2019";
-		WebElement Startdateele = driver.findElement(By.xpath("//*[text() ='08/03/2019']"));
+		String sdate = "08/20/2019";
+		WebElement Startdateele = driver.findElement(By.xpath("//*[text() ='08/20/2019']"));
 		if (Startdateele.isDisplayed()) {
 			Assert.assertEquals(sdate, Startdateele.getText());
 			System.out.println("Startdate is displayed");
@@ -437,13 +445,13 @@ public class OverallScenarios {
 			System.out.println("Startdate is not  displayed");
 		}
 		// Check the End date is displayed or not
-		String enddate = "08/30/2019";
-		WebElement Endadateele2 = driver.findElement(By.xpath("//*[text() ='08/30/2019']"));
+		String enddate = "09/06/2019";
+		WebElement Endadateele2 = driver.findElement(By.xpath("//*[text() ='09/06/2019']"));
 		if (Endadateele2.isDisplayed()) {
 			Assert.assertEquals(enddate, Endadateele2.getText());
 			System.out.println("Enddate is displayed");
 		} else {
-			System.out.println("Startdate is not  displayed");
+			System.out.println("Enddate is not  displayed");
 		}
 		// click the Rule button
 
@@ -451,14 +459,16 @@ public class OverallScenarios {
 		driver.findElement(By.xpath("//*[@class ='icon-rules']")).click();
 		Thread.sleep(2000);
 		driver.navigate().back();
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//*[@class ='dropdown-nav dropdown-toggle add-project'])[2]")).click();
 		System.out.println("rules pass");
 		Thread.sleep(2000);
 		// click the issues button
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		driver.findElement(By.xpath("//*[@class ='icon-issue']")).click();
 		Thread.sleep(4000);
 		driver.navigate().back();
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//*[@class ='dropdown-nav dropdown-toggle add-project'])[2]")).click();
 		Thread.sleep(2000);
 		System.out.println("isssues pass");
@@ -467,6 +477,7 @@ public class OverallScenarios {
 		driver.findElement(By.xpath("//*[@class ='icon-info']")).click();
 		Thread.sleep(2000);
 		driver.navigate().back();
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//*[@class ='dropdown-nav dropdown-toggle add-project'])[2]")).click();
 		Thread.sleep(2000);
 		System.out.println("overview pass");
@@ -476,6 +487,7 @@ public class OverallScenarios {
 		driver.findElement(By.xpath("//*[@class ='icon-sub-project']")).click();
 		Thread.sleep(2000);
 		driver.navigate().back();
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//*[@class ='dropdown-nav dropdown-toggle add-project'])[2]")).click();
 		Thread.sleep(2000);
 		System.out.println("subfolder pass");
@@ -485,6 +497,7 @@ public class OverallScenarios {
 		driver.findElement(By.xpath("//*[@class ='icon-d-viewer']")).click();
 		Thread.sleep(2000);
 		driver.navigate().back();
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//*[@class ='dropdown-nav dropdown-toggle add-project'])[2]")).click();
 		Thread.sleep(5000);
 		// check the filter option in project type
@@ -519,7 +532,165 @@ public class OverallScenarios {
 		}
 		driver.findElement(By.xpath("//button[text()='OK']")).click();
 		Thread.sleep(2000);
+		driver.findElement(By.xpath("(//*[@class='dropdown-nav dropdown-toggle add-project'])[3]")).click();
 
-		System.out.println("All functionlities are workng well");
+		System.out.println("All functionlitied are workng well");
+		Thread.sleep(4000);
+		// Click the Project overview info button
+		driver.findElement(By.xpath("(//*[@class ='project-image'])[2]")).click();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("(//*[@class ='col text-center'])[2]")).click();
+		Thread.sleep(4000);
+
+		// close the preview image
+		driver.findElement(By.xpath("//*[text()='X']")).click();
+		driver.navigate().back();
+		// Click the sub folder icon and clicks the create button
+		Thread.sleep(2000);
+		driver.findElement(By.id("icon_3")).click();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//*[text()=' Create ']")).click();
+		Thread.sleep(2000);
+		// Click the project name field but not entered the value
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='projectName']")).click();
+		Thread.sleep(4000);
+		driver.findElement(By.xpath("//*[@id='parentProjectId']")).click();
+		Thread.sleep(2000);
+		// Validate the validation message
+		String validationmsage1 = "Project Name is required";
+		String Validusername1 = driver.findElement(By.xpath("//*[text() ='Project Name is required']")).getText();
+		System.out.println(Validusername1);
+		if (validationmsage1.contains(Validusername1)) {
+			System.out.println("projectname validation message are same");
+		} else {
+			System.out.println("projectname validation message are different");
+		}
+
+		// Enter the inValid userName and validate the validation message
+
+		WebElement Projectnamesub = driver.findElement(By.xpath("//*[@id='projectName']"));
+		Projectnamesub.sendKeys("hcgvjhdvfhdjggjhdggjgkgkfdhgkjfdgfkld");
+		driver.findElement(By.xpath("//*[@id='parentProjectId']")).click();
+		Thread.sleep(3000);
+		String Invalidnamesub = "Project Name allowed 16 characters only";
+		String projectnamevalidationmessagesub = driver
+				.findElement(By.xpath("//*[text() = 'Project Name allowed 16 characters only.']")).getText();
+		System.out.println(projectnamevalidationmessagesub);
+		if (Invalidnamesub.equalsIgnoreCase(projectnamevalidationmessagesub)) {
+			System.out.println(" projectname validation message are same");
+		} else {
+			System.out.println("projectname validation message are different");
+		}
+		Projectnamesub.clear();
+		Thread.sleep(4000);
+		// Enter the Valid userName
+
+		driver.findElement(By.xpath("//*[@id='projectName']")).sendKeys("Sasasasasa");
+		Thread.sleep(2000);
+		// Enter the Valida Address
+		driver.findElement(By.xpath("//*[@formcontrolname ='ProjectAddress']")).sendKeys("sasasascxcxcxcxcczczczxzx");
+		// click the description field but not enter the value
+		driver.findElement(By.id("Description")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@formcontrolname ='ProjectAddress']")).click();
+		Thread.sleep(3000);
+		String description1sub = driver.findElement(By.xpath("//*[text() ='Description is required']")).getText();
+		System.out.println(description1sub);
+		Thread.sleep(2000);
+		driver.findElement(By.id("Description")).sendKeys("37654375987432659832659382659803265982");
+		// upload the image
+		WebElement uploadsub = driver.findElement(By.xpath("//*[@class = 'fa fa-upload fa-2x pointer large']"));
+		Thread.sleep(2000);
+		uploadsub.click();
+		Thread.sleep(2000);
+		Screen screensub = new Screen();
+		screensub.type("C:\\Users\\Ajithkumar.Gopal\\Pictures\\Saved Pictures\\tulips-1531279-640x480.jpg");
+		Thread.sleep(5000);
+		Robot robotsub = new Robot();
+		robotsub.keyPress(KeyEvent.VK_ENTER);
+		robotsub.keyRelease(KeyEvent.VK_ENTER);
+		Thread.sleep(2000);
+		// Clicks the cancel button
+		// driver.findElement(By.xpath("//*[@class='btn btn-secondary']")).click();
+		driver.navigate().back();
+		// driver.findElement(By.xpath("(//*[@class='iconicCard'])[4]")).click();
+		Thread.sleep(3000);
+		// check the subproject name
+
+		WebElement subprojectname1 = driver.findElement(By.xpath("//*[@class='card-item-title']"));
+		if (subprojectname1.isDisplayed()) {
+			System.out.println("Subproject name is displayed");
+			Assert.assertEquals("SUBTEST", subprojectname1.getText());
+		} else {
+			System.out.println("Subproject name is not  displayed");
+		}
+		// check the subproject type
+		Thread.sleep(3000);
+		WebElement projettypesubs = driver.findElement(By.xpath("//*[text()='Healthcare']"));
+		if (projettypesubs.isDisplayed()) {
+			System.out.println("projecttype is displayed");
+			Assert.assertEquals("Healthcare", projettypesubs.getText());
+		} else {
+			System.out.println("projecttype is not  displayed");
+		}
+		// check the Project sub type
+		Thread.sleep(2000);
+		WebElement projectsubtypeaaa = driver.findElement(By.xpath("//*[text()='Hospital']"));
+		if (projectsubtypeaaa.isDisplayed()) {
+			System.out.println("projectsubtype is displayed");
+			Assert.assertEquals("Hospital", projectsubtypeaaa.getText());
+		} else {
+			System.out.println("projectsubtype is not  displayed");
+		}
+		// Check the Construction type
+		Thread.sleep(2000);
+		WebElement Constructiontypessasa = driver.findElement(By.xpath("//*[text()='New']"));
+		if (Constructiontypessasa.isDisplayed()) {
+			System.out.println("projectsubtype is displayed");
+			Assert.assertEquals("New", Constructiontypessasa.getText());
+		} else {
+			System.out.println("projectsubtype is not  displayed");
+		}
+		Thread.sleep(5000);
+		// Click the rules icon
+		driver.findElement(By.xpath("(//*[@class='iconicCard ng-star-inserted'])[2]")).click();
+		Thread.sleep(2000);
+		System.out.println("Action is clicked");
+		driver.findElement(By.id("BackToProjects")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.id("icon_3")).click();
+
+		Thread.sleep(5000);
+		// Click the Overview icon
+		driver.findElement(By.xpath("(//*[@class='iconicCard ng-star-inserted'])[1]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.id("BackToProjects")).click();
+		Thread.sleep(4000);
+		driver.findElement(By.xpath("//*[@id='icon_3']")).click();
+		Thread.sleep(3000);
+		// Click the issues icon
+		driver.findElement(By.xpath("(//*[@class='iconicCard ng-star-inserted'])[3]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.id("BackToProjects")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='icon_3']")).click();
+		Thread.sleep(3000);
+		// click the subfolder icon
+		driver.findElement(By.xpath("(//*[@class='iconicCard ng-star-inserted'])[4]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.id("BackToProjects")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='icon_3']")).click();
+		Thread.sleep(3000);
+		// click the Module viewer icon
+		driver.findElement(By.xpath("(//*[@class='iconicCard ng-star-inserted'])[5]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.id("BackToProjects")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='icon_3']")).click();
+		Thread.sleep(3000);
+		System.out.println("All functionlitied are workng well");
+		driver.navigate().back();
 	}
 }
